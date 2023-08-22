@@ -151,8 +151,19 @@ console.log(oyun("Makas", "Kağıt"));
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
 function bilgisayarinSecimi() {
+  let randomSecim=Math.floor(Math.random()*3);
+  if (randomSecim ===0) {
+    return "Taş";
 
-}/* Görev 4 : Metrik Dönüştürücü */
+  }else if (randomSecim===1){
+    return "Kağıt";
+  }else{
+    return "Makas";
+  }}
+console.log(oyun("Taş",bilgisayarinSecimi()));
+console.log(oyun("Kağıt",bilgisayarinSecimi()));
+console.log(oyun("Makas",bilgisayarinSecimi()));
+/* Görev 4 : Metrik Dönüştürücü */
 
 //Görev 4a - Kilometreden Mil
 /*
@@ -196,10 +207,12 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yap:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(sayi) {
+  return(sayi+" küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!");
 }
-
+for (let i=0;i<5;i++){
+  console.log(cocukSarkisi(5-i));
+}
 /* Görev 6 : Not Hesaplayıcı */
 
 /*
@@ -228,9 +241,10 @@ function notHesapla(not) {
   } else {
     return "F aldın";
   }
-
+  let not=70;
+}console.log(notHesapla(not));
   /*buraya kodunu yazabilirsin*/
-}
+
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
 
