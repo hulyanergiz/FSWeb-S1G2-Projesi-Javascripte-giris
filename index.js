@@ -19,7 +19,12 @@ Aşağıdakileri yap:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
+const surucuYasi = 12;
+if (surucuYasi > 18) {
+  console.log(true);
+} else {
+  console.log(false);
+}
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
 
@@ -31,7 +36,15 @@ Aşağıdakileri yap:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+let birinciDeger = 3;
+let ikinciDeger = 2;
+if (birinciDeger < ikinciDeger) {
+  birinciDeger = ikinciDeger;
 
+} else {
+  birinciDeger = birinciDeger;
+}
+console.log("birinci değer:", birinciDeger);
 /*
 Görev 1c - String bir değeri Number'a dönüştürün (puanlamaya dahil değildir)
 
@@ -43,7 +56,19 @@ Aşağıdakileri yap:
    İPUCU: Number metoduna bakabilirsin
 */
 
+
+
+
+
+
+/*let stringNumber="1999";
+console.log(typeof stringNumber);*/
 /*
+
+
+
+
+
 Görev 1d - Çarpma
  
 Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:   
@@ -52,9 +77,11 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:
    3. console.log(carpma(7,4)) ile yazdığın fonsiyonu test edin. Console'da sonucu 28 olarak görmelisin.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function carpma(a, b) {
+  let sonuc = a * b;
+  return sonuc;
 }
+console.log(carpma(7, 4));
 
 /* Görev 2 : Köpeğin Yaşı */
 
@@ -65,9 +92,11 @@ Aşağıdakileri yap:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(insanYas) {
+  let kopeginYasi = insanYas * 7;
+  return kopeginYasi;
 }
+console.log(kopeginYasi(5));
 
 /* Görev 3 */
 /*
@@ -84,8 +113,27 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
-}
+  if (oyuncu === bilgisayar) {
+    return "Beraberlik";
+  } else if (oyuncu === "Makas" && bilgisayar === "Kağıt") {
+    return "Kazandın";
+  } else if (oyuncu === "Kağıt" && bilgisayar === "Taş") {
+    return "Kazandın";
+  } else if (oyuncu === "Taş" && bilgisayar === "Makas") {
+    return "Kazandın";
+  } else {
+    return "Kaybettin";
+  }
+
+} console.log(oyun("Taş", "Taş"));
+console.log(oyun("Kağıt", "Kağıt"));
+console.log(oyun("Makas", "Makas"));
+console.log(oyun("Taş", "Kağıt"));
+console.log(oyun("Taş", "Makas"));
+console.log(oyun("Kağıt", "Taş"));
+console.log(oyun("Kağıt", "Makas"));
+console.log(oyun("Makas", "Taş"));
+console.log(oyun("Makas", "Kağıt"));
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -102,8 +150,9 @@ function oyun(oyuncu, bilgisayar) {
 Şimdi kendi seçtiğin bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığın oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
+function bilgisayarinSecimi() {
 
-/* Görev 4 : Metrik Dönüştürücü */
+}/* Görev 4 : Metrik Dönüştürücü */
 
 //Görev 4a - Kilometreden Mil
 /*
@@ -113,9 +162,11 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+function milDonusturucu(km) {
+  let mile = km * 0.6214;
+  return mile;
+} let km = 100;
+console.log(km, "km= ", milDonusturucu(km), "mil");
 
 //Görev 4b - Santimetreden Feet
 /*
@@ -127,9 +178,10 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yap:
 Google'da arama ipucu: "feet cm dönüştürme"
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+function feetDonusturucu(cm) {
+  return cm * 0.0328;
+} let cm = 100;
+console.log(cm, "cm= ", feetDonusturucu(cm), "feet");
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
 
@@ -163,7 +215,20 @@ Aşağdakileri notHesapla fonksiyonunda yap.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/) {
+function notHesapla(not) {
+
+  if (not >= 90 && not <= 100) {
+    return "A aldın";
+  } if (not >= 80 && not <= 89) {
+    return "B aldın";
+  } if (not >= 70 && not <= 79) {
+    return "C aldın";
+  } if (not >= 60 && not <= 69) {
+    return "D aldın";
+  } else {
+    return "F aldın";
+  }
+
   /*buraya kodunu yazabilirsin*/
 }
 
